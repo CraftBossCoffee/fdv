@@ -1,0 +1,1 @@
+pub(crate) static NEW_LINE_CHARACTER_CRLF: &str = "\r\n";
