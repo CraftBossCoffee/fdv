@@ -7,7 +7,7 @@ use std::{path::PathBuf};
     name = "File Divider EX",
     version = "0.0.1",
     author = "author : mocnamo jimukyoku",
-    long_about = "It aim to divide a large file into smaller files. It can also count the number of lines in the file and search or replace words in the file.")]
+    long_about = "It aim to divide a large file into smaller files. It can also count the number of lines in the file.")]
 pub struct Cli {
     /// Process type
     #[clap(subcommand)]
@@ -38,31 +38,5 @@ pub enum Action {
         /// Maximum lines per file
         #[clap(long, short)]
         line: Option<u64>,
-    },
-
-    /// search the file with the specified word.
-    Find {
-        /// File to be searched(required)
-        #[clap(short, long)]
-        path: PathBuf,
-
-        /// Word to search(required)
-        #[clap(short, long)]
-        word: String,
-    },
-
-    /// replace in a file with a specified word.
-    Grep {
-        /// File to be searched(required)
-        #[clap(short, long)]
-        path: PathBuf,
-
-        /// Word to search(required)
-        #[clap(short, long)]
-        word: String,
-
-        /// Word to replace(required)
-        #[clap(short, long)]
-        replace: String,
     },
 }

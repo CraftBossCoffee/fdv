@@ -1,8 +1,9 @@
 
 use std::{path::PathBuf};
-use std::fs::{self, Metadata, File};
-use std::io::{self, BufRead, BufReader, Write};
+use std::fs::{self, File};
+use std::io::{self, BufRead, BufReader};
 
+#[allow(unused, dead_code)]
 pub fn count_line(file : File) -> io::Result<u64>{
     let mut reader = BufReader::new(file);
     let mut buf = String:: new();
@@ -15,6 +16,7 @@ pub fn count_line(file : File) -> io::Result<u64>{
     Ok(result)
 }
 
+#[allow(unused, dead_code)]
 pub fn count(path : &PathBuf) {
     let file = File::open(path).unwrap();
     let line_len = count_line(file).unwrap();
